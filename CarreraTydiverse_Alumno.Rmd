@@ -383,6 +383,10 @@ head(datos_grade_tidy)
 ```{r}
 
 
+datos_grade_tidy <- students2 %>%
+  pivot_longer(cols = -grade,
+               names_to = c(".value", "class"),
+               names_sep = "_")
 
 
 ```
