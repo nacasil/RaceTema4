@@ -264,11 +264,6 @@ pack_sum <- by_package %>%
 22. Muestra el 1% de los paquetes que han sido más descargados. Para ello puedes utilizar la función `quantile(????, probs=0.99)`. Siendo ??? la variable de interés, que te permitirá estimar el umbral. Los valores por encima serán los que nos interesen. Almacena estos paquetes **top descargas** en la variable `top_counts`. **NOTA: De ahora en adelante concatena todas las operaciones partiendo del elemento `cran`, usando _pipes_**.
 ```{r}
 
-
-
-
-
-
 ```
 23. Repite el apartado anterior utilizando **pipes** para que finalmente el resultado se ordene, en orden descendente, según el número de descargas (`count`) y se almacene el la variable `top_counts_sorted`
 ```{r}
@@ -372,8 +367,16 @@ Carga el fichero de datos `datostidyr.Rdata` que contiene varios conjuntos de da
 La columna `grade` es la calificación y las dos siguientes el número de estudiantes hombre y mujer que han recibido dicha calificación.
 ¿ Cuáles son las variables ?. Transfórmalo en un conjunto `tidy` con las variables, `grade, sex y count`
 ```{r}
+load("data/datostidyr.Rdata")
+library(tidyverse)
+#las variables son grade, male, female 
+datos_grade_tidy <- students %>%
+  pivot_longer(cols = c(male, female),
+               names_to = "sex",
+               values_to = "count")
 
 
+head(datos_grade_tidy)
 
 ```
 30. Considera el conjunto ´students2´, que es similar al primero pero que se han recogido datos correspondientes a dos grupos, (`male_1, female_1`, etc). Transfórmalo en un conjunto `tidy` añadiendo una columna adicional correspondiente al grupo (llama a la nueva variable `class`)
