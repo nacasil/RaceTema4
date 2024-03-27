@@ -295,7 +295,6 @@ pack_sum <- by_package %>%
 ```{r}
 
 
-
 ```
 
 26. Añade una columna llamada `size_mb` que contenga el tamaño de cada descarga en megabytes.
@@ -382,18 +381,13 @@ head(datos_grade_tidy)
 30. Considera el conjunto ´students2´, que es similar al primero pero que se han recogido datos correspondientes a dos grupos, (`male_1, female_1`, etc). Transfórmalo en un conjunto `tidy` añadiendo una columna adicional correspondiente al grupo (llama a la nueva variable `class`)
 ```{r}
 
-
 datos_grade_tidy <- students2 %>%
   pivot_longer(cols = -grade,
                names_to = c(".value", "class"),
                names_sep = "_")
-
-
 ```
 31. Considera el conjunto `students3` y observa por qué no es un `tidy data` . Las variables finales del conjunto deberían ser: `name, class, midterm, final`. Dado que un alumno solo puede estar en una de las clases aparecen muchos `NA`, al reorganizar, usa `na.rm=TRUE` en las opciones de `gather`
 ```{r}
-
-
 
 
 ```
@@ -472,6 +466,20 @@ Considera los datos almacenado en `sat` y haz las transformaciones adecuadas par
 
 38. La función `today` devuelve la fecha actual. Almacéna la fecha actual en `this_day`, y muéstrala por pantalla. Usa las funciones `year, month y day` para extraer cada una de las partes. `wday` para obtener el día de la semana ()
 ```{r}
+
+
+# Obtener la fecha actual
+this_day <- today()
+
+print(this_day)
+
+year(this_day)
+month(this_day)
+day(this_day)
+
+# Extraer el día de la semana (en formato numérico)
+wday(this_day)
+
 
 
 
