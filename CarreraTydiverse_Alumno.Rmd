@@ -161,9 +161,8 @@ cran %>% filter(country == "ES", version > "3.4.0")
 
 7. Elige aquellas descargas realizadas desde España (ES), o Portugal (PT).
 ```{r}
-
-
-
+paises <- c('ES', 'PT')
+cran %>% filter(country %in% paises)
 ```
 
 8. Elige aquellas descargas cuyo tamaño supera los 100500 bytes desde un sistema operativo  `linux-gnu`.
