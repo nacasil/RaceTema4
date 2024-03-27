@@ -210,6 +210,9 @@ cran3 <- cran %>% select(ip_id, package, size)
 
 15. Crea una nueva variable en `cran3` llamada `size_mb` que contenga el tamaño de la descarga expresado en Mbytes ($1Mbyte=2^{20}$ bytes).
 ```{r}
+# Suponiendo que 'cran3' es tu data frame y 'size_bytes' 
+#es la columna que contiene el tamaño en bytes de la descarga
+cran3 <- mutate(cran3, size_mb = size / (2^20))
 
 
 ```
