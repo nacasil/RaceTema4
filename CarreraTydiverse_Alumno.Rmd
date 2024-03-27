@@ -275,7 +275,13 @@ cran %>%
 ```{r}
 
 
-
+cran %>%
+  group_by(package) %>%
+  summarize(descargados = n()) %>%
+  ungroup() %>%
+  mutate(umbral = quantile(descargados, probs = 0.99, na.rm = TRUE)) %>%
+  filter(descargados > umbral) %>%
+  arrange(desc(descargados))
 
 
 
