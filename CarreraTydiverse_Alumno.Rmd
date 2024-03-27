@@ -504,7 +504,13 @@ wday(this_day)
 y muéstralo por pantalla. Usa las funciónes `hour, minute, second` para extraer la información de cada elemento.
 ```{r}
 
+this_moment <- now()
 
+print(this_moment)
+
+hour(this_moment)
+minute(this_moment)
+second(this_moment)
 
 
 
