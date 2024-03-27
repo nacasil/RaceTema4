@@ -205,7 +205,7 @@ cran2 %>%
 en este orden y almacénalas en `cran3`.
 ```{r}
 
-
+cran3 <- cran %>% select(ip_id, package, size)
 ```
 
 15. Crea una nueva variable en `cran3` llamada `size_mb` que contenga el tamaño de la descarga expresado en Mbytes ($1Mbyte=2^{20}$ bytes).
